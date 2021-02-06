@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const loginRoute = require('./routes/route.login');
 const signupRoute = require('./routes/route.signup');
 
-const DB_URI = 'mongodb://localhost/allUsers';
+const DB_URI = process.env.DB_URI;
 
 // connect database
 mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
