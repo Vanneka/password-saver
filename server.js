@@ -4,6 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 3030;
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const path = require('path')
 
 const loginRoute = require('./routes/route.login');
 const signupRoute = require('./routes/route.signup');
@@ -22,6 +23,8 @@ mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 app.use(express.json())
 app.set('view engine', 'ejs')
 app.use(morgan('dev'))
+app.use(express.urlencoded({ extended: false }))
+app.use(express.static('public'))
 // middleware
 
 // routes

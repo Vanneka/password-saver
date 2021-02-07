@@ -6,19 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <form action="/login" method="POST">
-        <input type="text" placeholder="Email here" name="email"  value="<%= typeof email != 'undefined' ? email : '' %>">
+    <div class="login-box">
+        <h2>Signup for a secure account</h2>
+        <form action="/signup" method="POST">
+            <div class="user-box">
+                <input type="email" placeholder="Email here" name="email"
+                    value="<%= typeof email != 'undefined' ? email : '' %>"></div>
 
-        <input type="text" placeholder="Username here" name="username" value="<%= typeof email != 'undefined' ? username : '' %>">
+            <div class="user-box">
+                <input type="text" placeholder="Username here" name="username"
+                    value="<%= typeof email != 'undefined' ? username : '' %>"></div>
 
-        <input type="password" placeholder="Enter your password here" name="password" value="<%= typeof email != 'undefined' ? password : '' %>">
+            <div class="user-box">
+                <input type="password" placeholder="Enter your password here" name="password"
+                    value="<%= typeof email != 'undefined' ? password : '' %>"></div>
 
-        <input type="password" placeholder="Reenter your password here" name="password2" value="<%= typeof email != 'undefined' ? password2 : '' %>">
-        <button type="submit">Signup</button>
-    </form>
+            <div class="user-box">
+                <input type="password" placeholder="Reenter your password here" name="password2"
+                    value="<%= typeof email != 'undefined' ? password2 : '' %>"></div>
+                    <div class="user-btn">
+                        <button type="submit" id="submit">Signup</button>
+                    </div>
+                    
+        </form>
+        <%- include('./partials/footer'); %>
+        <ul>
+            <%= include('./partials/messages'); %>
+        </ul>
+    </div>
 </body>
-<%- include('./partials/footer'); %>
+
 </html>
