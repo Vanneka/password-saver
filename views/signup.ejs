@@ -28,15 +28,16 @@
             <div class="user-box">
                 <input type="password" placeholder="Reenter your password here" name="password2"
                     value="<%= typeof email != 'undefined' ? password2 : '' %>"></div>
+                    <ul>
+                        <%- include('./partials/messages'); %>
+                    </ul>
                     <div class="user-btn">
                         <button type="submit" id="submit">Signup</button>
                     </div>
-                    
+                    <p id="accessibility-mssg">Already have an account? <a href="/login">Login here.</a></p>
+                    <p id="accessibility-mssg"><a href="/">Home</a></p>
         </form>
-        <%- include('./partials/footer'); %>
-        <ul>
-            <%= include('./partials/messages'); %>
-        </ul>
+
     </div>
 </body>
 

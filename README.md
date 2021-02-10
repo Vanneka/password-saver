@@ -1,5 +1,5 @@
 ## 🕵️‍‍♀️🕵️‍‍♀️ Password saving application 🕵️‍‍♀️🕵️‍‍♀️
-Never lose a password again with this secure password saving web application. This project came about when I realised I didn't have a place to securelly store all my passwords in one place. Rather than download an app, I decided to build one.
+Never lose a password again with this secure password saving web application. This project came about when I realised I didn't have a place to securely store all my passwords in one place. Rather than download an app, I decided to build one.
 
 ### To use the app
 1. Run `git clone` on this repository to clone the repo.

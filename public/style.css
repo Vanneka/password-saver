@@ -20,16 +20,33 @@ p {
   padding: 10px 0;
 }
 
-#action-btn {
+#accessibility-mssg {
+  font-size: 14px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+#action-btn, #accessibility-mssg a {
   color: #03e9f4;
   transition: all ease-in 0.3s;
 }
 
-#action-btn:hover {
+#action-btn:hover, #accessibility-mssg a:hover {
   color: #00b5be;
   transition: all ease-in 0.3s;
 }
 
+.error-msg {
+  font-size: 12px;
+  color: rgb(255, 132, 132);
+  padding: 0;
+}
+
+.success-msg {
+  font-size: 12px;
+  color: rgb(73, 255, 155);
+  padding: 0;
+}
 
 .login-box {
   position: absolute;
@@ -60,7 +77,7 @@ p {
   padding: 10px 0;
   font-size: 16px;
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   border: none;
   border-bottom: 1px solid #fff;
   outline: none;
@@ -96,7 +113,7 @@ p {
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  margin-top: 40px;
+  margin-top: 10px;
   letter-spacing: 4px
 }
 

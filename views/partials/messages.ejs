@@ -1,5 +1,14 @@
-<% if(typeof errors != 'undefined') { %>
-    <% errors.forEach(error => { %>
-      <li><%= error.message %></li>  
+
+<% if(typeof validError != 'undefined') { %>
+    <% validError.forEach(error => { %>
+      <li class="error-msg"><%= error.message %></li>  
     <% }); %>
+<% } %>
+
+<% if(typeof userExistsError != 'undefined') { %>
+    <li class="error-msg"><%= userExistsError.message %></li>  
+<% } %>
+
+<% if(success_login != '') { %>
+  <p class="success-msg"><%= success_login %></p>  
 <% } %>
