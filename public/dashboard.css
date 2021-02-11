@@ -355,3 +355,14 @@ footer p {
   justify-content: start;
   align-items: center;
 }
+
+input#the-password:disabled{
+  background-color: transparent;
+  border: transparent;
+  color: white;
+}
+
+.password-url a {
+  color: #03e9f4;
+  font-size: 14px;
+}

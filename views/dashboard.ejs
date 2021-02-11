@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dashboard.css">
-    <title>Your Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Password Saver | Your Dashboard</title>
 </head>
 
 <body>
@@ -58,22 +59,21 @@
                         <th>Password URL</th>
                         <th>User Control</th>
                     </tr>
-
                     <tr>
                         <td>
                             <div class="number">
                                 1.
                             </div>
                         </td>
-
                         <td>
-                            <div class="password-item">
-                                xGGjkJKJKyKJlkLK;Ioiho
+                            <div id="password-item">
+                                <input type="password" name="" id="the-password" value="jdfksjfsjf;dn;a" disabled>
+                                <i id="password-toggle" class="fa fa-eye"></i>
                             </div>
                         </td>
                         <td>
                             <div class="password-url">
-                                <a href="https://uicookies.com/bootstrap-profile-page/">Link to password URL</a>
+                                <a href="https://uicookies.com/bootstrap-profile-page/" target="_blank">Link to login page</a>
                             </div>
                         </td>
                         <td>
@@ -94,18 +94,11 @@
                     </tr>
                     <!-- create multiple items  -->
                     <div class="item">
-
-
-
-
-
                     </div>
                 </table>
             </div>
             <%- include('./partials/footer'); %>
         </div>
-
+<script src="functions.js"></script>
 </body>
-
-
 </html>

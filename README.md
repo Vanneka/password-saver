@@ -25,4 +25,9 @@ The user dashboard is your secure space for adding your passwords to different s
 - Update the password if you ever have to change it
 - Delete a password when you close the associated account or no longer have any use for it
 
+### The Password
+By default, the password is hidden immediately you add it. To view and copy the password follow these steps
+1. Click the `eye` icon on the right to toggle `hide/show` of your password.
+2. When password is visible, you can copy the password.
+
 Styling coutrsey [Soufiane Khalfaoui Hassani](https://codepen.io/soufiane-khalfaoui-hassani/pen/LYpPWda)
