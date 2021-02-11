@@ -6,13 +6,16 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const session = require('express-session')
 const flash = require('connect-flash')
+const DB_URI = process.env.DB_URI;
 
+// routes
 const loginRoute = require('./routes/route.login');
 const signupRoute = require('./routes/route.signup');
 
-const DB_URI = process.env.DB_URI;
+// the secured dashboard route
+const dashboardRoute = require('./routes/route.dashboard');
 
-// connect database
+// connect databases
 mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(console.log('database connected'))
 .catch(err => {
@@ -30,7 +33,10 @@ app.use(express.static('public'))
 app.use(session({
     'secret': process.env.SESSION_SECRET,
     saveUninitialized: true,
-    resave: false
+    resave: false,
+    cookie: {
+        maxAge: 6000
+    }
 }))
 app.use(flash())
 // middleware
@@ -46,6 +52,7 @@ app.use((req, res, next)=>{
 // routes
 app.use('/login', loginRoute)
 app.use('/signup', signupRoute)
+app.use('/dashboard', dashboardRoute)
 // routes
 
 // SERVER CODE HERE

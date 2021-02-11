@@ -1,4 +1,5 @@
-## 🕵️‍‍♀️🕵️‍‍♀️ Password saving application 🕵️‍‍♀️🕵️‍‍♀️
+## 🕵️‍‍🕵️‍‍ Password saving application 🕵️🕵️‍‍
+
 Never lose a password again with this secure password saving web application. This project came about when I realised I didn't have a place to securely store all my passwords in one place. Rather than download an app, I decided to build one.
 
 ### To use the app
@@ -13,10 +14,14 @@ Never lose a password again with this secure password saving web application. Th
 - You will be redirected to the login page
 - Login with your secure details to access your user dashboard
 
+### To login to your account
+- Enter the details you registered with into the `Login` page.
+- You will be redirected to your dashboard on successful login
+
 ### User Dashboard
 
 The user dashboard is your secure space for adding your passwords to different sites. In this space you can do the following:
-- Add a password and a link to the login page the password is associated with
+- Add a password and a link to the login page the password is associated with.
 - Update the password if you ever have to change it
 - Delete a password when you close the associated account or no longer have any use for it
 

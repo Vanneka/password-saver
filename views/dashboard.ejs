@@ -5,14 +5,107 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
     <title>Your Dashboard</title>
 </head>
 
 <body>
-    <h1>Dashboard</h1>
-    <p >Welcome <%= user.name %></p>
-    <a href="/logout">Logout</a>
+    <div class="dashboard">
+        <div class="left">
+            <div class="navigation">
+                <div class="wrapper2">
+                    <div class="user-info">
+                        <h3 class="user-name">Kyle</h3>
+                        <p class="user-email">kyle@small.com</p>
+                    </div>
+                    <div class="folders">Items</div>
+                    <div class="folder-icons">
+                        <div class="icon1">
+                            <img src="https://i.ibb.co/qdgf3TJ/envelope.png" />
+                        </div>
+                        <div class="icon-name1">Passwords
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE  -->
+        <div class="right-side">
+            <div class="right-header">
+                <div class="top-bar">
+                    <div class="top-bar-justify">
+                        <div class="big-inbox">
+                            Hi Kyle
+                        </div>
+                    </div>
+                    <div class="profile2">
+                        <div class="icon-name5">Kyle Dominguez</div>
+                    </div>
+                </div>
+                <hr class="new-hr">
+                <div class="right-bottom">
+                        <div class="form has-search">
+                            <%- include ('./partials/form') %>
+                        </div>
+                </div>
+            </div>
+            <div class="right-body">
+                <table class="message">
+                    <tr>
+                        <th>S/N</th>
+                        <th>Password</th>
+                        <th>Password URL</th>
+                        <th>User Control</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="number">
+                                1.
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="password-item">
+                                xGGjkJKJKyKJlkLK;Ioiho
+                            </div>
+                        </td>
+                        <td>
+                            <div class="password-url">
+                                <a href="https://uicookies.com/bootstrap-profile-page/">Link to password URL</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="buttons">
+                                <button class="btn2 butona"> Delete
+                                    <span class="tag">
+                                        <i class="fa fa-trash"></i>
+                                    </span>
+                                </button>
+
+                                <button class="btn2 butonb"> Edit
+                                    <span class="tag">
+                                        <i class="fa fa-pencil"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- create multiple items  -->
+                    <div class="item">
+
+
+
+
+
+                    </div>
+                </table>
+            </div>
+            <%- include('./partials/footer'); %>
+        </div>
+
 </body>
-<%- include('./partials/footer'); %>
+
 
 </html>
