@@ -37,8 +37,11 @@ app.use(morgan('dev'))
 
 app.use(session({
     'secret': process.env.SESSION_SECRET,
-    saveUninitialized: true,
-    resave: false
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: 3600000
+    }
 }))
 
 // passport middleware

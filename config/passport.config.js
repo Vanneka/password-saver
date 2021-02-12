@@ -12,14 +12,10 @@ function authenticateUser() {
       if (!user) {
         return done(null, false, { message: "User with that email does not exist" })
       }
-      bcrypt.compare(password, user.password, (err, res) => {
-        if (err) return done(err);
-        if(res===false) {
-          console.log('no')
-          return done(null, false, { message: 'Incorrect password' })
-        }
-        console.log('yes')
-        return done(null, user)
+      bcrypt.compare(password, user.password, (err, isMatch) => {
+        if (err) { return done(err) }
+        if (isMatch) { return done(null, user) }
+        else { return done(null, false, { message: 'Incorrect password' }) }
       })
     }).catch(err => {
       console.log(err)
