@@ -12,10 +12,10 @@
 <body>
     <div class="login-box">
         <h2>Login to your secure account</h2>
-            <%- include('./partials/messages'); %>
+        <%- include('./partials/login_message'); %>
         <form action="/login" method="POST">
             <div class="user-box">
-                <input type="text" placeholder="Enter your email here" name="username">
+                <input type="email" placeholder="Enter your email here" name="email">
             </div>
             <div class="user-box">
                 <input type="password" placeholder="Enter your password here" name="password">
@@ -23,7 +23,7 @@
             <div class="user-btn">
                 <button type="submit" id="submit">Login</button>
             </div>
-            <p  id="accessibility-mssg">Don't have an account? <a href="/signup">Signup here.</a></p>
+            <p id="accessibility-mssg">Don't have an account? <a href="/signup">Signup here.</a></p>
             <p id="accessibility-mssg"><a href="/">Home</a></p>
         </form>
     </div>

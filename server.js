@@ -1,19 +1,23 @@
 require('dotenv').config();
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3030;
-const morgan = require('morgan');
 const mongoose = require('mongoose');
+
+// passport
+const passport = require('passport')
+require('./config/passport.config')
+// passport
+
 const session = require('express-session')
 const flash = require('connect-flash')
 const DB_URI = process.env.DB_URI;
+const PORT = process.env.PORT || 3030;
 
 // routes
 const loginRoute = require('./routes/route.login');
 const signupRoute = require('./routes/route.signup');
-
-// the secured dashboard route
 const dashboardRoute = require('./routes/route.dashboard');
+const morgan = require('morgan');
 
 // connect databases
 mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -24,27 +28,30 @@ mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 // connect database
 
 // middleware
-app.use(express.json())
 app.set('view engine', 'ejs')
-app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+
 app.use(express.static('public'))
+app.use(morgan('dev'))
 
 app.use(session({
     'secret': process.env.SESSION_SECRET,
     saveUninitialized: true,
-    resave: false,
-    cookie: {
-        maxAge: 6000
-    }
+    resave: false
 }))
+
+// passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(flash())
 // middleware
 
 // Global variable
 app.use((req, res, next)=>{
-    res.locals.error_login = req.flash('error_login');
     res.locals.success_login = req.flash('success_login');
+    res.locals.error = req.flash('error');
     next()
 })
 // Global variable

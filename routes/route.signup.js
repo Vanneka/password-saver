@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Joi = require('joi')
-const registerationSchema = require('../validations/joi.signup')
+const registerationSchema = require('../config/joi.signup')
 const User = require('../models/model.user')
 const bcrypt = require('bcryptjs')
 
