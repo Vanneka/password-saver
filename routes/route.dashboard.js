@@ -1,10 +1,9 @@
 const express = require('express')
 const router = express.Router();
 const { ensureAuthenticated } = require('../config/authEnsure')
-const { ensureLoggedIn } = require('../config/authEnsure')
 
 // get the dashboard page
-router.get('/', ensureAuthenticated, (req, res)=>{
+router.get('/:user', ensureAuthenticated, (req, res)=>{
     res.render('dashboard', {
         name: req.user.username,
         email: req.user.email
@@ -13,6 +12,12 @@ router.get('/', ensureAuthenticated, (req, res)=>{
 
 
 // logout from your dashboard
-
+//logout
+router.get('/logout', (req, res) => {
+    req.logout();
+    req.flash('success_login', 'You are now logged out')
+    res.redirect('/')
+  })
+  
 
 module.exports = router

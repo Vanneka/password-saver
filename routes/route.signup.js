@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const { username, email, password, password2 } = req.body
-    console.log(req.body)
+    // console.log(req.body)
     // validate with Joi
     const validationRes = registerationSchema.validate(req.body, {
         abortEarly: false
