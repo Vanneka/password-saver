@@ -22,13 +22,13 @@ router.post('/', (req, res, next) => {
     }
     else {
       passport.authenticate('local', {
-        successRedirect: `/dashboard/${user.username}`,
+        successRedirect: `/dashboard`,
         failureFlash: true
       })(req, res, next)
     }
   }).catch(err=>console.log(err))
 })
 
-
+// /${user.username}
 
 module.exports = router;

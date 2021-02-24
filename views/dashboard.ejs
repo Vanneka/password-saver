@@ -14,49 +14,52 @@
 
 <body>
 
-        <div class="container-fluid ">
-            <div class="row dashboard">
-                <!-- LEFT SIDE  -->
-                <div class="left col-lg-2 col-md-2 col-xs-12 pb-4">
-                    <div class="user-info">
-                        <h3 class="user-name"><%- name  %></h3>
-                        <p class="user-email"><%- email  %></p>
+    <div class="container-fluid ">
+        <div class="row dashboard">
+            <!-- LEFT SIDE  -->
+            <div class="left col-lg-2 col-md-2 col-xs-12 pb-4">
+                <div class="user-info">
+                    <h3 class="user-name"><%- username  %></h3>
+                    <p class="user-email"><%- email  %></p>
+                </div>
+                <div class="">
+                    <a href="/logout" class="logout-btn">Logout</a>
+                </div>
+            </div>
+            <!-- LEFT SIDE  -->
+            <!-- RIGHT SIDE  -->
+            <div class="right-side col-lg-10 col-md-10 col-xs-12">
+                <div class="right-header">
+                    <div class="top-bar">
+                        <div class="top-bar-justify">
+                            <div class="big-inbox">
+                                Hi <%- username  %>
+                            </div>
+                        </div>
+                        <div class="profile2">
+                            <div class="icon-name5"> <%- username  %> </div>
+                        </div>
                     </div>
-                    <div class="">
-                        <a href="" class="logout-btn">Logout</a>
+                    <hr class="new-hr">
+                    <div class="right-bottom">
+                        <div class="form has-search">
+                            <form action="/dashboard" method="POST">
+                                <%- include ('./partials/form_fields') %>
+                            </form>
+
+                        </div>
                     </div>
                 </div>
-                <!-- LEFT SIDE  -->
-                <!-- RIGHT SIDE  -->
-                <div class="right-side col-lg-10 col-md-10 col-xs-12">
-                    <div class="right-header">
-                        <div class="top-bar">
-                            <div class="top-bar-justify">
-                                <div class="big-inbox">
-                                    Hi <%- name  %>
-                                </div>
-                            </div>
-                            <div class="profile2">
-                                <div class="icon-name5"> <%- name  %> </div>
-                            </div>
-                        </div>
-                        <hr class="new-hr">
-                        <div class="right-bottom">
-                            <div class="form has-search">
-                                <%- include ('./partials/form') %>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right-body" id="the-table">
-                        <table class="message table table-borderless ">
-                            <tr class="text-white">
-                                <th>S/N</th>
-                                <th>Password</th>
-                                <th>Password URL</th>
-                                <th>User Control</th>
-                            </tr>
-                            <tbody>
-                         
+                <div class="right-body" id="the-table">
+                    <table class="message table table-borderless ">
+                        <tr class="text-white">
+                            <th>S/N</th>
+                            <th>Password</th>
+                            <th>Password URL</th>
+                            <th>User Control</th>
+                        </tr>
+                        <tbody>
+
                             <tr>
                                 <td>
                                     <div class="number text-white">
@@ -93,20 +96,20 @@
                                     </div>
                                 </td>
                             </tr>
-                                   
-                        </tbody>
-                            <!-- create multiple items  -->
-                            <div class="item">
-                            </div>
-                        </table>
-                    </div>
-                    <%- include('./partials/footer'); %>
-                </div>
-                <!-- RIGHT SIDE  -->
 
+                        </tbody>
+                        <!-- create multiple items  -->
+                        <div class="item">
+                        </div>
+                    </table>
+                </div>
+                <%- include('./partials/footer'); %>
             </div>
+            <!-- RIGHT SIDE  -->
+
         </div>
-    
+    </div>
+
     <script defer src="/js/functions.js"></script>
 </body>
 
